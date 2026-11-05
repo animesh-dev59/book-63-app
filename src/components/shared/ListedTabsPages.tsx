@@ -6,19 +6,8 @@ import { FiTrash2 } from 'react-icons/fi';
 
 const ListedTabsPages = ({book}:{book:IBook}) => {
   return (
-    <div>
+    <div className=''>
       <div className="relative border border-gray-200 rounded-2xl p-5 flex flex-col md:flex-row items-center gap-6 bg-white shadow-sm hover:shadow-md transition-all duration-300 mb-4">
-      
-      {/* Left Side Delete Icon Button */}
-      {/* {onDelete && ( */}
-        <button
-          // onClick={() => onDelete(book.bookId)}
-          className="absolute top-4 left-4 text-gray-400 hover:text-red-500 transition-colors p-2 bg-gray-50 hover:bg-red-50 rounded-full z-10"
-          title="Delete book"
-        >
-          <FiTrash2 size={18} />
-        </button>
-      {/* )} */}
 
       {/* Left Side: Book Image Box (Margin add kora hoyeche jate button-er sathe overlap na hoy) */}
       <div className="bg-gray-100 rounded-xl p-4 flex justify-center items-center w-full md:w-48 h-48 flex-shrink-0 mt-4 md:mt-0">
@@ -40,6 +29,7 @@ const ListedTabsPages = ({book}:{book:IBook}) => {
             <span>Year of Publishing: {book.yearOfPublishing}</span>
           </div>
         </div>
+        
 
         {/* Publisher and Pages */}
         <div className="flex flex-wrap items-center gap-6 text-sm text-gray-500 mb-6">
@@ -65,18 +55,27 @@ const ListedTabsPages = ({book}:{book:IBook}) => {
               Rating: {book.rating}
             </span>
           </div>
+            <button
+            
+          
+          className=" text-gray-400 hover:text-red-500 transition-colors p-2 bg-gray-50 hover:bg-red-50 rounded-full z-10"
+          title="Delete book"
+        >
+          <FiTrash2 className='font-bold text-5xl text-black' />
+        </button>
 
           <Link
             href={`/books/${book.bookId}`}
             className="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-2.5 rounded-full text-sm transition duration-200"
           >
             View Details
-          </Link>
+          </Link> 
+
         </div>
       </div>
-    </div>
+    </div> 
     </div>
   );
 };
 
-export default ListedTabsPages;
+export default ListedTabsPages; 

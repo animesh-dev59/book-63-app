@@ -8,6 +8,15 @@ const ListedBooks = () => {
   const { readBooks, wishList } = useContext(BooksContext);
   return (
     <div>
+
+       <div className="text-center my-3"> 
+        <select defaultValue="Pick a text editor" className="select select-primary">
+  <option disabled={true}>Pick a text editor</option>
+  <option>VScode</option>
+  <option>VScode fork</option>
+  <option>Another VScode fork</option>
+</select>
+       </div>
       {/* name of each tab group should be unique */}
       <div className="tabs tabs-box">
         <input
