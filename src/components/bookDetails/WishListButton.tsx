@@ -1,13 +1,14 @@
  'use client'
 import { BooksContext } from '@/context/BooksProvider';
 import { IBook } from '@/types/IBook';
-import React, { useContext } from 'react';
+import { useContext } from 'react';
+import { toast } from 'react-toastify';
 
 const WishListButton = ({book}:{book:IBook}) => { 
   const {wishList,setWishList} =useContext(BooksContext);
   const handleWishListButton = ()=>{   
     setWishList([...wishList,book]);
-    alert(`your book : ${book.bookName}`);
+    toast.success(`your book : ${book.bookName}`);
   }
   return (<button  
     onClick={()=>handleWishListButton()}

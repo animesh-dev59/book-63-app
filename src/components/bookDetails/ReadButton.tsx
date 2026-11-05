@@ -2,6 +2,7 @@
 import { BooksContext } from "@/context/BooksProvider";
 import { IBook } from "@/types/IBook";
 import React, { useContext } from "react";
+import { toast } from "react-toastify";
 
 const ReadButton = ({ book }: { book: IBook }) => {
   const { readBooks, setReadBooks } = useContext(BooksContext);
@@ -9,7 +10,7 @@ const ReadButton = ({ book }: { book: IBook }) => {
   const handleReadButton = () => {
     // console.log('btn clicked');
     setReadBooks([...readBooks, book]);
-    alert(`your bookName:${book.bookName}`);
+    toast.success(`your bookName:${book.bookName}`);
   };
   return (
     <button
