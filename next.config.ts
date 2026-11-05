@@ -9,6 +9,15 @@ const nextConfig: NextConfig = {
         as: "*.css",
       },
     },
+  }, 
+   images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+       
+      },
+    ],
   },
 };
 
