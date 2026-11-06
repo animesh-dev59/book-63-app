@@ -10,7 +10,7 @@ interface IBookDetailsPagesProps{
   }>;
 }
 const getBooks = async () => {
-  const url = process.env.Next_PUBLIC_URL || 'http://localhost:3000/';
+  const url = process.env.NEXT_PUBLIC_URL || 'http://localhost:3000/';
   const res = await fetch(
     `${url}/booksData.json`
   );
