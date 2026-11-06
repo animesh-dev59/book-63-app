@@ -3,8 +3,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { FiTrash2 } from 'react-icons/fi';
-
-const ListedTabsPages = ({book}:{book:IBook}) => {
+interface IProps {
+  book: IBook;
+  onDelete: (id: number) => void;
+}
+const ListedTabsPages = ({book , onDelete}:IProps) => {
   return (
     <div className=''>
       <div className="relative border border-gray-200 rounded-2xl p-5 flex flex-col md:flex-row items-center gap-6 bg-white shadow-sm hover:shadow-md transition-all duration-300 mb-4">
@@ -56,8 +59,7 @@ const ListedTabsPages = ({book}:{book:IBook}) => {
             </span>
           </div>
             <button
-            
-          
+            onClick={() => onDelete(book.bookId)}
           className=" text-gray-400 hover:text-red-500 transition-colors p-2 bg-gray-50 hover:bg-red-50 rounded-full z-10"
           title="Delete book"
         >

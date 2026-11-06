@@ -31,7 +31,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <BooksProvider> 
         <Navbar/>
         {children}  
-        <ToastContainer position="top-center"/>
+        <ToastContainer position="top-left"/>
         </BooksProvider>
         </body>
     </html>
