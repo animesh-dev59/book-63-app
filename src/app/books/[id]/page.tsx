@@ -9,15 +9,19 @@ interface IBookDetailsPagesProps{
     id:string
   }>;
 }
-const getbooks =async()=>{ 
-  const res = await fetch('http://localhost:3000/booksData.json');
+const getBooks = async () => {
+  const url = process.env.Next_PUBLIC_URL || 'http://localhost:3000/';
+  const res = await fetch(
+    `${url}/booksData.json`
+  );
+
   const data = await res.json();
   return data;
-}
+};
 
 const ViewDetailsPages = async({params}:IBookDetailsPagesProps) => {
   const {id} = await params; 
-  const booksData = await getbooks();
+  const booksData = await getBooks();
 
   const book = booksData.find((book:IBook)=> book.bookId === Number(id)) as IBook;
 

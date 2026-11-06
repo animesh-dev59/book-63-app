@@ -4,7 +4,8 @@ import React from 'react';
 // import BookCard from '../shared/BookCard';
 
 const getbooks =async():Promise<IBook[]>=>{ 
-  const res = await fetch('http://localhost:3000/booksData.json');
+  const url = process.env.Next_PUBLIC_URL || 'http://localhost:3000/';
+  const res = await fetch(`${url}/booksData.json`);
   const data = await res.json();
   return data;
 }
